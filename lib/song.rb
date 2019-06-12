@@ -30,8 +30,15 @@ class Song
   def self.genre_count
     genre_count= {}
     @@genres.each do |genre|
-      binding.pry
-      genre_count[:pop] = 1
+      if genre_count.key?(genre)
+        genre_count += 1
+        
+      #binding.pry
+      else
+
+        genre_count[genre] = 1
+    end
+    return genre_count
   end
 
   def self.artist_count
